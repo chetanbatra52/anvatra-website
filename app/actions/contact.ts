@@ -14,20 +14,14 @@ export async function submitContactForm(formData: FormData) {
   const website = formData.get("website")?.toString() || "";
 
   // Required field validation
-  if (!fullName || !email || !requirement || !message) {
-    return {
-      success: false,
-      message: "Please fill in all required fields.",
-    };
-  }
+if (!fullName || !email || !requirement || !message) {
+  throw new Error("Please fill in all required fields.");
+}
 
   // Honeypot spam protection
-  if (website) {
-    return {
-      success: true,
-      message: "Request received.",
-    };
-  }
+if (website) {
+  return;
+}
 
   try {
     await resend.emails.send({
@@ -50,16 +44,10 @@ export async function submitContactForm(formData: FormData) {
       `,
     });
 
-    return {
-      success: true,
-      message: "Your enquiry has been submitted successfully.",
-    };
+   return;
   } catch (error) {
     console.error(error);
 
-    return {
-      success: false,
-      message: "Something went wrong while sending your enquiry.",
-    };
+  throw new Error("Something went wrong while sending your enquiry.");
   }
 }
