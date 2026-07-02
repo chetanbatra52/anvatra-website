@@ -14,7 +14,7 @@ export default function OrganizationSchema() {
 
     contactPoint: {
       "@type": "ContactPoint",
-      email: "hello@anvatra.com",
+      email: "contact@anvatra.com",
       contactType: "Customer Support",
       availableLanguage: "English",
     },

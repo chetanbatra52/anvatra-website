@@ -18,7 +18,7 @@ export const contactPageContent = {
     {
       icon: Mail,
       title: "Email Us",
-      value: "hello@anvatra.com",
+      value: "contact@anvatra.com",
       description:
         "Reach out anytime and we'll respond as soon as possible.",
     },

@@ -84,7 +84,7 @@ export default function IndustryCard({
         {/* CTA - Featured Card Only */}
         {featured && (
           <div className="mt-8">
-            <Button href="#contact">
+            <Button href="/contact">
               Start Hiring
             </Button>
           </div>
